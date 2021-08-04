@@ -1,15 +1,10 @@
 const express = require('express');
 
-const emojis = require('./emojis');
+const weatherApi = require('./openweather')
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.json({
-    message: 'API - 👋🌎🌍🌏'
-  });
-});
 
-router.use('/emojis', emojis);
+router.use('/openWeather',weatherApi)
 
 module.exports = router;
